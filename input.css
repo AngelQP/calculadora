@@ -1,0 +1,512 @@
+:root {
+  /* Theme 1 */
+
+  /*** Backgrounds ***/
+  --Theme1VeryDarkDesaturatedBlueMain: hsl(222, 26%, 31%);
+  --Theme1VeryDarkDesaturatedBlueToogle: hsl(223, 31%, 20%);
+  --Theme1VeryDarkDesaturatedBlueScreen: hsl(224, 36%, 15%);
+
+  /*** Keys ***/
+  --Theme1DesaturatedDarkBlueBackground: hsl(225, 21%, 49%);
+  --Theme1DesaturatedDarkBlueShadow: hsl(224, 28%, 35%);
+  --Theme1Red: hsl(6, 63%, 50%);
+  --Theme1DarkRed: hsl(6, 70%, 34%);
+  --Theme1LightGrayishOrange: hsl(30, 25%, 89%);
+  --Theme1GrayishOrange:hsl(28, 16%, 65%);
+
+  /*** Text ***/
+  --Theme1VeryDarkGrayishBlue: hsl(221, 14%, 31%);
+  --Theme1White: hsl(0, 0%, 100%);
+
+  /* Hover */
+  --Theme1Options: hsl(224, 51%, 76%);
+  --Theme1Result: hsl(6, 93%, 67%);
+  --Theme1Boton: hsl(0, 0%, 100%);
+
+
+  /* Theme 2 */
+
+  /*** Backgrounds ***/
+  --Theme2LightGray: hsl(0, 0%, 90%);
+  --Theme2GrayishRed: hsl(0, 5%, 81%);
+  --Theme2VeryLightGray: hsl(0, 0%, 93%);
+
+  /*** Keys ***/
+  --Theme2DarkModerateCyan: hsl(185, 42%, 37%);
+  --Theme2VeryDarkCyan: hsl(185, 58%, 25%);
+  --Theme2Orange: hsl(25, 98%, 40%);
+  --Theme2DarkOrange: hsl(25, 99%, 27%);
+  --Theme2LightGrayishYellow: hsl(45, 7%, 89%);
+  --Theme2DarkGrayishOrange: hsl(35, 11%, 61%);
+
+  /*** Text ***/
+  --Theme2VeryDarkGrayishYellow: hsl(60, 10%, 19%);
+  --Theme2White: hsl(0, 0%, 100%);
+
+  /* Hover */
+  --Theme2Options: hsl(175, 41%, 56%);
+  --Theme2Result: hsl(25, 100%, 60%);
+  --Theme2Boton: hsl(0, 0%, 100%);
+
+  /* Theme 3 */
+
+  /*** Backgrounds ***/
+  --Theme3VeryDarkVioletMain: hsl(268, 75%, 9%);
+  --Theme3VeryDarkVioletToggle: hsl(268, 71%, 12%);
+
+  /*** Keys ***/
+  --Theme3DarkViolet: hsl(281, 89%, 26%);
+  --Theme3VividMagenta: hsl(285, 91%, 52%);
+  --Theme3PureCyan: hsl(176, 100%, 44%);
+  --Theme3SoftCyan: hsl(177, 92%, 70%);
+  --Theme3VeryDarkViolet: hsl(268, 47%, 21%);
+  --Theme3DarkMagenta: hsl(290, 70%, 36%);
+
+  /*** Text ***/
+  --Theme3LightYellow: hsl(52, 100%, 62%);
+  --Theme3VeryDarkBlue: hsl(198, 20%, 13%);
+  --Theme3White: hsl(0, 0%, 100%);
+
+  /* Hover */
+  --Theme3Options: hsl(280, 56%, 44%);
+  --Theme3Result: hsl(177, 100%, 79%);
+  --Theme3Boton: hsl(268, 54%, 44%);
+
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  transition: background-color ease-in-out .5s;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'League Spartan', 'sans-serif';
+  padding: 32px 0;
+}
+
+.container {
+  width: 330px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 32px;
+}
+
+.container-change-theme {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container-value-theme {
+  padding-left: 70px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.container-range {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.range-theme, .range-theme::-webkit-slider-runnable-track, .range-theme::-webkit-slider-thumb {-webkit-appearance: none;}
+
+.range-theme {
+  width: 70px;
+  height: auto;
+  appearance: none;
+  border-radius: 10px;
+  padding: 3px;
+  --theme-Slider: var(--Theme1Red);
+  --theme-Slider-hover: var(--Theme1Result);
+  cursor: pointer;
+}
+
+.range-theme:focus {
+  outline: none;
+}
+
+.range-theme::-webkit-slider-thumb {
+  background-color: var(--theme-Slider);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.range-theme::-webkit-slider-thumb:hover {
+  background-color: var(--theme-Slider-hover);
+}
+
+h1 {
+  font-size: 26px;
+}
+
+#alert-result{
+  color: var(--Theme1Result);
+  filter: blur(0.2px);
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 15px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.visible {
+  display: block;
+}
+.invisible {
+  display: none;
+}
+
+.box-result {
+  text-align: end;
+  display: grid;
+  place-items: end;
+  width: 100%;
+  height: 90px;
+  padding: 15px 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 40px;
+  line-height: 1.1;
+
+  word-break: break-all;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+/** Scrollbars **/
+.box-result::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.box-result::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+.box-result::-webkit-scrollbar-button:increment,.box-result::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.box-result::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.box-result::-webkit-scrollbar-thumb {
+  background-color: rgba(131, 130, 130, 0.7);
+  border-radius: 20px;
+}
+
+.box-result::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+/** /Scrollbars **/
+
+form {
+  width: 100%;
+  height: auto;
+  padding: 24px;
+  font-size: 32px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.container-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+
+  cursor: pointer;
+}
+
+.btn-operation {
+  --Bg-Hover-Operation: var(--Theme1Boton);
+}
+
+.btn-operation:hover {
+  background-color: var(--Bg-Hover-Operation);
+}
+
+.btn-letters {
+  --Bg-Hover-Letters: var(--Theme1Options);
+}
+
+.btn-letters:hover {
+  background-color: var(--Bg-Hover-Letters);
+}
+
+.btn-result {
+  --Bg-Hover-Result: var(--Theme1Result);
+}
+
+.btn-result:hover {
+  background-color: var(--Bg-Hover-Result);
+}
+
+.btn-footer {
+  width: 134px;
+}
+
+.btn-special {
+  font-size: 18px;
+}
+
+.footer {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/*** THEMES ***/
+
+/* Theme 1 */
+
+.body--theme1 {
+  background: var(--Theme1VeryDarkDesaturatedBlueMain);
+}
+
+.header--theme1 {
+  color: var(--Theme1White);
+}
+
+.box-result--theme1{
+  background-color: var(--Theme1VeryDarkDesaturatedBlueScreen);
+  color: var(--Theme1White);
+}
+
+.form--theme1 {
+  background-color: var(--Theme1VeryDarkDesaturatedBlueToogle);
+}
+
+.btn--theme1 {
+  background-color: var(--Theme1LightGrayishOrange);
+  color: var(--Theme1VeryDarkGrayishBlue);
+  filter: drop-shadow(0px 2px 0px var(--Theme1GrayishOrange));
+  --Bg-Hover-Operation: var(--Theme1Boton);
+}
+
+.btn-result--theme1 {
+  background-color: var(--Theme1Red);
+  filter: drop-shadow(0px 2px 0px var(--Theme1DarkRed));
+  color: var(--Theme1White);
+  --Bg-Hover-Result: var(--Theme1Result);
+}
+
+.btn-options--theme1 {
+  background-color: var(--Theme1DesaturatedDarkBlueBackground);
+  filter: drop-shadow(0px 2px 0px var(--Theme1DesaturatedDarkBlueShadow));
+  color: var(--Theme1White);
+  --Bg-Hover-Letters: var(--Theme1Options);
+}
+
+.range-theme--theme1 {
+  background-color: var(--Theme1VeryDarkDesaturatedBlueToogle);
+  --theme-Slider: var(--Theme1Red);
+  --theme-Slider-hover: var(var(--Theme1Result));
+}
+
+.text--theme1, .text--theme1 a {
+  color: var(--Theme1LightGrayishOrange);
+  font-weight: 500;
+}
+
+.text--theme1 a:hover {
+  border-bottom: 2px solid var(--Theme1GrayishOrange);
+}
+
+/* Theme 2 */
+
+.body--theme2 {
+  background: var(--Theme2LightGray);
+}
+
+.header--theme2 {
+  color: var(--Theme2VeryDarkGrayishYellow);
+}
+
+.box-result--theme2{
+  background-color: var(--Theme2VeryLightGray);
+  color: var(--Theme2VeryDarkGrayishYellow);
+}
+
+.form--theme2 {
+  background-color: var(--Theme2GrayishRed);
+}
+
+.btn--theme2 {
+  background-color: var(--Theme2LightGrayishYellow);
+  color: var(--Theme2VeryDarkGrayishYellow);
+  filter: drop-shadow(0px 2px 0px var(--Theme2DarkGrayishOrange));
+  --Bg-Hover-Operation: var(--Theme2Boton);
+}
+
+.btn-result--theme2 {
+  background-color: var(--Theme2Orange);
+  filter: drop-shadow(0px 2px 0px var(--Theme2DarkOrange));
+  color: var(--Theme2White);
+  --Bg-Hover-Result: var(--Theme2Result);
+}
+
+.btn-options--theme2 {
+  background-color: var(--Theme2DarkModerateCyan);
+  filter: drop-shadow(0px 2px 0px var(--Theme2VeryDarkCyan));
+  color: var(--Theme2White);
+  --Bg-Hover-Letters: var(--Theme2Options);
+}
+
+.range-theme--theme2 {
+  background-color: var(--Theme2GrayishRed);  
+  --theme-Slider: var(--Theme2Orange);
+  --theme-Slider-hover: var(--Theme2Result);
+}
+
+.text--theme2, .text--theme2 a {
+  color: var(--Theme2VeryDarkGrayishYellow);
+  font-weight: 500;
+}
+
+.text--theme2 a:hover {
+  border-bottom: 2px solid var(--Theme2DarkGrayishOrange);
+}
+
+/* Theme 3 */
+
+.body--theme3 {
+  background: var(--Theme3VeryDarkVioletMain);
+}
+
+.header--theme3 {
+  color: var(--Theme3LightYellow);
+}
+
+.box-result--theme3{
+  background-color: var(--Theme3VeryDarkVioletToggle);
+  color: var(--Theme3LightYellow);
+}
+
+.form--theme3 {
+  background-color: var(--Theme3VeryDarkVioletToggle);
+  --theme-Slider: var(--Theme2Orange);
+}
+
+.btn--theme3 {
+  background-color: var(--Theme3VeryDarkViolet);
+  color: var(--Theme3LightYellow);
+  filter: drop-shadow(0px 2px 0px var(--Theme3DarkMagenta));
+  --Bg-Hover-Operation: var(--Theme3Boton);
+}
+
+.btn-result--theme3 {
+  background-color: var(--Theme3PureCyan);
+  filter: drop-shadow(0px 2px 0px var(--Theme3SoftCyan));
+  color: var(--Theme3VeryDarkBlue);
+  --Bg-Hover-Result: var(--Theme3Result);
+}
+
+.btn-options--theme3 {
+  background-color: var(--Theme3DarkViolet);
+  filter: drop-shadow(0px 2px 0px var(--Theme3VividMagenta));
+  color: var(--Theme3White);
+  --Bg-Hover-Letters: var(--Theme3Options);
+}
+
+.range-theme--theme3 {
+  background-color: var(--Theme3VeryDarkVioletToggle);  
+  --theme-Slider: var(--Theme3PureCyan);
+  --theme-Slider-hover: var(--Theme3Result);
+}
+
+.text--theme3, .text--theme3 a {
+  color: var(--Theme3LightYellow);
+  font-weight: 500;
+}
+
+.text--theme3 a:hover {
+  border-bottom: 2px solid var(--Theme3DarkMagenta);
+}
+
+
+@media (min-width: 768px) {
+
+  .container{
+    width: 545px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .container-value-theme {
+    padding-right: 8px;
+    font-size: 14px;
+  }
+
+  .container-range {
+    font-size: 14px;
+  }
+
+  .range-theme {
+    padding: 5px;
+    width: 90px;
+    height: 25px;
+  }
+
+  .range-theme::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+  }
+
+  .box-result {
+    height: 130px;
+    font-size: 56px;
+  }
+
+  .container-buttons {
+    gap: 20px;
+  }
+
+  .btn {
+    width: 100px;
+  }
+
+  .btn-footer {
+    width: 230px;
+  }
+
+  .btn-special {
+    font-size: 24px;
+  }
+
+  .footer {
+    font-size: 20px;
+  }
+}

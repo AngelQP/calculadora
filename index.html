@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./input.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap" rel="stylesheet">
+    <title>Calculator app</title>
+  </head>
+  <body id="body" class="body--theme1">
+
+    <header id="header" class="container header--theme1">
+      <h1>calc</h1>
+
+      <div class="container-change-theme">
+
+        <div class="container-value-theme">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+
+        <div class="container-range">
+          <label for="inputTheme">THEME</label>
+          <input class="range-theme range-theme--theme1" type="range" id="inputTheme" name="inputTheme" min="1" max="3" value="1">
+        </div>
+
+      </div>
+    </header>
+
+    <main class="container">
+
+      <p id="alert-result" class="container invisible">No se puede dividir entre 0</p>
+      <div 
+        class="box-result box-result--theme1"
+        id="box-result"
+        >0</div>
+
+      <form  
+        id="form"   
+        class="form--theme1"
+      >
+        <div class="container-buttons">
+          <button value="7" class="btn btn-operation btn--theme1"> 7 </button> 
+          <button value="8" class="btn btn-operation btn--theme1"> 8 </button> 
+          <button value="9" class="btn btn-operation btn--theme1"> 9 </button> 
+          <button id="btn-borrar" class="btn btn-letters btn-special btn-options--theme1"> DEL </button> 
+          <button value="4" class="btn btn-operation btn--theme1"> 4 </button> 
+          <button value="5" class="btn btn-operation btn--theme1"> 5 </button> 
+          <button value="6" class="btn btn-operation btn--theme1"> 6 </button> 
+          <button value="+" class="btn btn-operation btn--theme1"> + </button> 
+          <button value="1" class="btn btn-operation btn--theme1"> 1 </button> 
+          <button value="2" class="btn btn-operation btn--theme1"> 2 </button> 
+          <button value="3" class="btn btn-operation btn--theme1"> 3 </button> 
+          <button value="-" class="btn btn-operation btn--theme1"> - </button> 
+          <button value="." class="btn btn-operation btn--theme1"> . </button> 
+          <button value="0" class="btn btn-operation btn--theme1"> 0 </button> 
+          <button value="/" class="btn btn-operation btn--theme1"> / </button> 
+          <button value="x" class="btn btn-operation btn--theme1"> x </button> 
+          <button id="btn-reset" class="btn btn-letters btn-footer btn-special btn-options--theme1"> RESET </button>
+          <button id="btn-result" class="btn btn-footer btn-result btn-special btn-result--theme1"> = </button>
+        </div>
+
+      </form>
+
+    </main>
+    
+
+
+    <div class="container footer">
+      <p id="footer-text" class="text text--theme1">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#" target="_blank">Angel Quispe</a>.
+      </p>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
