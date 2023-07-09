@@ -1,8 +1,11 @@
 import {changeTheme, formUndefault} from './helpers/events.js';
 import {btnsTheme, btnBorrar, btnReset, boxResult, btnResult, alertResult} from './helpers/elements.js';
+import {initLocalStorage} from './helpers/handLocalStorage.js'
 
+initLocalStorage();
 changeTheme();
 formUndefault();
+
 
 document.addEventListener('keydown', (event) => {
   const keyValue = event.key;
@@ -62,17 +65,26 @@ function addArray(print) {
     else {
       containNumbers.push(print);
       paintBox(containNumbers.join(''));
-      containNumbers.push('0');
     }
 
     return;
   }
-
+  
   else {
 
-    const lastNumber = containNumbers[ultimoIndice];
+    let lastNumber;
 
-    if(!(isNaN(lastNumber)) && print != '.'){ // true : Si es un numero (asi sea un punto)
+    if(operations.includes(containNumbers[ultimoIndice])) {
+      const countIndice = containNumbers.push('0');
+      lastNumber = containNumbers[countIndice-1];
+    }
+    else {
+      lastNumber = containNumbers[ultimoIndice];
+    }
+
+
+    // 
+    if(!(isNaN(lastNumber)) && print != '.'){ // true : Si es un numero y no es un punto
       number = containNumbers.pop();
 
       // Compara si el digito inicia con cero
@@ -87,8 +99,7 @@ function addArray(print) {
       containNumbers.push(number);
     }
 
-    // TODO: agregar mas ceros despues del '.'
-    else if(print === '.') {
+    else if(print === '.') { // agregar ceros despues del punto
 
       number = containNumbers.pop();
 
@@ -165,6 +176,11 @@ function resetArray() {
 }
 
 function operateArray() {
+
+  const lastIndex = containNumbers.length - 1;
+  if(operations.includes(containNumbers[lastIndex])){
+    containNumbers.pop();
+  }
 
   while(
     containNumbers.includes('+') ||
