@@ -25,6 +25,7 @@ Los usuarios deben ser capaces de:
 - Vea cómo se ajusta el tamaño de los elementos según el tamaño de la pantalla de su dispositivo
 - Realizar operaciones matemáticas como suma, resta, multiplicación y división.
 - Ajuste el tema de color según su preferencia
+- **Bonificación**: verifique su preferencia de tema inicial usando `prefers-color-scheme` y guarde cualquier cambio adicional en el navegador
 
 ### Screenshot
 
